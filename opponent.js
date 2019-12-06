@@ -1,15 +1,17 @@
-function Opponent() {
+
+function Opponent(sketch, width, height, playerSpeed, im_car_green, im_boom) {
+
     this.w = 80;
     this.h = 144;
 
-    this.x = floor(random(0, width-this.w));
-    this.y = -this.h;
-    this.speed = playerSpeed-1;
+    this.x = sketch.floor(sketch.random(0, width - this.w));
+    this.y = - this.h;
+    this.speed = playerSpeed - 1;
 
     this.isOvertakenBy = false;
 
     this.show = function() {
-        image(im_car_green, this.x, this.y);
+        sketch.image(im_car_green, this.x, this.y);
     };
 
     this.update = function() {
@@ -35,6 +37,6 @@ function Opponent() {
     };
 
     this.boom = function() {
-        image(im_boom, this.x-50, this.y);
+        sketch.image(im_boom, this.x-50, this.y);
     };
 }
