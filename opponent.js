@@ -10,21 +10,21 @@ function Opponent() {
 
     this.show = function() {
         image(im_car_green, this.x, this.y);
-    }
+    };
 
     this.update = function() {
         this.y += this.speed;
-    }
+    };
 
     this.offscreen = function() {
         return (this.y > height);
-    }
+    };
 
     this.overtakenBy = function(player) {
         if (player.y < this.y) {
             return true;
         }
-    }
+    };
 
     this.hits = function(player) {
         if (player.y < this.y+this.h && player.y+player.h > this.y) {
@@ -32,9 +32,9 @@ function Opponent() {
                 return true;
             }
         }
-    }
+    };
 
     this.boom = function() {
         image(im_boom, this.x-50, this.y);
-    }
+    };
 }

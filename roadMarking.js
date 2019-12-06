@@ -9,13 +9,13 @@ function roadMarking() {
         strokeWeight(3);
         fill(255, 182, 58);
         rect(this.x, this.y, this.w, this.h);
-    }
+    };
 
     this.update = function() {
         this.y += playerSpeed;
-    }
+    };
 
     this.offscreen = function() {
         return (this.y > height);
-    }
+    };
 }

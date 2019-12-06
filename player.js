@@ -7,15 +7,15 @@ function Player() {
 
     this.show = function() {
         image(im_car_red, this.x, this.y);
-    }
+    };
 
     this.turnLeft = function() {
         this.x -= 5;
         this.x = constrain(this.x, 0, width-this.w);
-    }
+    };
 
     this.turnRight = function() {
         this.x += 5;
         this.x = constrain(this.x, 0, width-this.w);
-    }
+    };
 }

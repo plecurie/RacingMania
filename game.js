@@ -8,6 +8,7 @@ var opponents = [];
 var roadMarkings = [];
 var score = 0;
 var lives = 5;
+var power = 0;
 
 function preload() {
     im_car_green = loadImage('assets/Car_Green.png');
@@ -18,7 +19,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(400, 600);
+    createCanvas(600, 600);
     //frameRate(50);
 
     roadMarkings.push(new roadMarking());
@@ -45,9 +46,17 @@ function draw() {
         }
     }
 
+    //Upgrade speed
+    if (frameCount % 900 === 0) {
+        playerSpeed++;
+    }
+
     // New opponents appear after certain number of frames
     if (frameCount % 130 === 0) {
-        opponents.push(new Opponent());
+        var nb = Math.floor(Math.random() * 3 + 1);
+        for(var i = 1; i <= nb; i++) {
+            opponents.push(new Opponent());
+        }
     }
 
     // Show opponents
@@ -58,6 +67,8 @@ function draw() {
         if (opponents[i].overtakenBy(player) && opponents[i].isOvertakenBy === false) {
             score += 5;
             opponents[i].isOvertakenBy = true;
+            if (score % 30 === 0 && power < 5)
+                power++;
         }
 
         // If opponents collide with the player, they get destroyed
@@ -78,6 +89,11 @@ function draw() {
     // Show the player
     player.show();
 
+    //Show the power
+    fill(20);
+    rect(width-450, height-50, 300, 20);
+
+
     // Game controls
     if (keyIsDown(LEFT_ARROW)) {
         player.turnLeft();
@@ -93,8 +109,17 @@ function draw() {
     fill(255);
     text('Score: ' + score, 30, 60);
 
-    for (var i = 0 ; i < lives ; i++) {
-        image(im_heart, 30 + (i*70), height-60);
+    for (var i = 0 ; i <= lives ; i++) {
+        image(im_heart, width - (i*70), height-580);
+    }
+
+    for (var i = 0; i < power ; i++) {
+        fill(102);
+        rect(150 + (i*60), height-50, 60, 20);
+    }
+
+    if (power === 5) {
+        power =0;
     }
 
     // Check if game is over
