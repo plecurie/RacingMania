@@ -1,10 +1,12 @@
+
 function Opponent() {
+
     this.w = 80;
     this.h = 144;
 
-    this.x = floor(random(0, width-this.w));
-    this.y = -this.h;
-    this.speed = playerSpeed-1;
+    this.x = floor(random(0, width - this.w));
+    this.y = - this.h;
+    this.speed = playerSpeed - 1;
 
     this.isOvertakenBy = false;
 
