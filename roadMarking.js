@@ -1,4 +1,4 @@
-function roadMarking() {
+function RoadMarking() {
     this.w = 10;
     this.h = 30;
 
