@@ -12,7 +12,7 @@ function RoadMarking() {
     };
 
     this.update = function() {
-        this.y += playerSpeed;
+        this.y += ghostSpeed;
     };
 
     this.offscreen = function() {

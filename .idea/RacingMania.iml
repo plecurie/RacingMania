@@ -9,5 +9,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="p5.sound" level="application" />
+    <orderEntry type="library" name="p5" level="application" />
+    <orderEntry type="library" name="p5.dom" level="application" />
+    <orderEntry type="library" name="p5.sound" level="application" />
+    <orderEntry type="library" name="ml5" level="application" />
   </component>
 </module>

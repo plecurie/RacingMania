@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{p5.sound}" />
+    <file url="PROJECT" libraries="{ml5, p5, p5.dom, p5.sound}" />
   </component>
 </project>
